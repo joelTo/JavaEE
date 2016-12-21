@@ -27,7 +27,7 @@ public class ListerPizzaController extends HttpServlet {
 
 			e.printStackTrace();
 		}
-
+		req.setAttribute("PizzaBaseJPA", pizzaBaseJPA);
 		req.setAttribute("listPizza", pizzas);
 		dispatcher.forward(req, resp);
 	}

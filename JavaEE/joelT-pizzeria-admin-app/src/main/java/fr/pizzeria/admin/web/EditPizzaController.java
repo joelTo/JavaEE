@@ -8,10 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.dao.PizzaDaoBaseJPA;
 import fr.model.Pizza;
 
 public class EditPizzaController extends HttpServlet {
-
+	private PizzaDaoBaseJPA pizzaBaseJPA = new PizzaDaoBaseJPA();
 	/**
 	 * 
 	 */
@@ -24,6 +25,7 @@ public class EditPizzaController extends HttpServlet {
 				.getRequestDispatcher("/WEB-INF/views/pizzas/editpizza.jsp");
 		// recuperer la pizza avec le code suivant:
 
+		req.setAttribute("PizzaBaseJPA", pizzaBaseJPA);
 		Pizza p = new Pizza();
 		req.setAttribute("PizzaAModifie", p);
 		dispatcher.forward(req, resp);

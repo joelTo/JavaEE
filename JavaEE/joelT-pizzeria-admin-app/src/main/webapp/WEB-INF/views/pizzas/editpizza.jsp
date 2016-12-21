@@ -1,5 +1,6 @@
 <%@page import="fr.model.Pizza"%>
 <%@page import="java.util.List"%>
+<%@page import="fr.dao.PizzaDaoBaseJPA"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,6 +12,18 @@
 	href="<%= request.getContextPath() %>/css/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>
+
+<script type="text/javascript">
+	
+ 	function ModifierPizza(codePizza) {
+ 		<%PizzaDaoBaseJPA BasePizza =(PizzaDaoBaseJPA) request.getAttribute("PizzaBaseJPA"); 
+ 		BasePizza.update(%>p<%,%>codePizza<%);%>
+	}
+	
+	</script>
+
+
+
 <div>
 <form class="form-horizontal">
 <fieldset>
@@ -69,14 +82,9 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="buttonAdd"></label>
   <div class="col-md-8">
-  <% p.setCode() ;  
-  p.setCode(code) ;
-  p.setCode(code) ;
-  p.setCode(code) ;
-  p.setCode(code) ;
-  p.setCode(code) ;%>
-    <button id="buttonAdd" name="buttonAdd" class="btn btn-success">Ajouter</button>
-    <button id="buttonCancel" name="buttonCancel" class="btn btn-danger">Annuler</button>
+																							//* Prendre le code dans URL
+    <a href <button id="buttonAdd" name="buttonAdd" class="btn btn-success" onclick='ModifierPizza(<%=p %>,<%= %>)'>Editer</button>></a>
+   <button id="buttonCancel" name="buttonCancel" class="btn btn-danger">Annuler</button>
   </div>
 </div>
 

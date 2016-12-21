@@ -1,0 +1,4 @@
+fr\pizzeria\admin\web\ListerPizzaController.class
+fr\pizzeria\admin\web\EditPizzaController.class
+fr\pizzeria\admin\web\PizzaServletWebApi.class
+fr\pizzeria\admin\web\AddPizzaController.class
