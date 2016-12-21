@@ -30,6 +30,7 @@
 		<hibernate-entitymanager.version>5.1.0.Final</hibernate-entitymanager.version><!-- 
 			dependance de la base de donnee JPA hibernate -->
 		<javaee-api.version>7.0</javaee-api.version> <!-- dependance concernant le module pizzeria-admin-app pour le HTTPServlet -->
+		<jstl.version>1.2</jstl.version> <!-- dependance utilisation des jstl https://mvnrepository.com/artifact/jstl/jstl -->
 	</properties>
 
 
@@ -103,6 +104,14 @@
 				<version>${javaee-api.version}</version>
 				<scope>provided</scope>
 			</dependency>
+
+			
+			<dependency>
+				<groupId>jstl</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${jstl.version}</version>
+			</dependency>
+
 
 		</dependencies>
 	</dependencyManagement>

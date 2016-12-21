@@ -3,7 +3,7 @@
 <%@page import="fr.dao.PizzaDaoBaseJPA"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -13,32 +13,25 @@
 	rel="stylesheet">
 </head>
 
-<script type="text/javascript">
-	
- 	function ModifierPizza(codePizza) {
- 		<%PizzaDaoBaseJPA BasePizza =(PizzaDaoBaseJPA) request.getAttribute("PizzaBaseJPA"); 
- 		BasePizza.update(%>p<%,%>codePizza<%);%>
-	}
-	
-	</script>
 
-
+<body>
 
 <div>
-<form class="form-horizontal">
+<form class="form-horizontal" method="post">
 <fieldset>
 
 <!-- Form Name -->
 <legend>Edition Pizza</legend>
 
-<% Pizza p = (Pizza) request.getAttribute("PizzaAModifie");  %>
+<% Pizza p = (Pizza) request.getAttribute("PizzaAModifer");    
+   String oldCode = (String) request.getAttribute("OldCode");%>
 
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="codePizza">Code</label>  
   <div class="col-md-4">
-  <input id="codePizza" name="codePizza" type="text" placeholder="<%p.getCode();%>" class="form-control input-md">
+  <input id="codePizza" name="codePizza" type="text" value="<%=p.getCode()%>" class="form-control input-md">
     
   </div>
 </div>
@@ -47,7 +40,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="libellePizza">Libellé Pizza :</label>  
   <div class="col-md-4">
-  <input id="libellePizza" name="libellePizza" type="text" placeholder="<%p.getNom();%>" class="form-control input-md">
+  <input id="libellePizza" name="libellePizza" type="text" value="<%=p.getNom()%>" class="form-control input-md">
     
   </div>
 </div>
@@ -56,7 +49,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="prixPizza">Prix :</label>  
   <div class="col-md-4">
-  <input id="prixPizza" name="prixPizza" type="text" placeholder="<%p.getPrix();%>" class="form-control input-md">
+  <input id="prixPizza" name="prixPizza" type="text" value="<%=p.getPrix()%>" class="form-control input-md">
     
   </div>
 </div>
@@ -65,7 +58,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="catPizza">Catégorie :</label>  
   <div class="col-md-4">
-  <input id="catPizza" name="catPizza" type="text" placeholder="<%p.getCatPizza();%>" class="form-control input-md">
+  <input id="catPizza" name="catPizza" type="text" value="<%=p.getCatPizza()%>" class="form-control input-md">
     
   </div>
 </div>
@@ -81,17 +74,20 @@
 <!-- Button (Double) -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="buttonAdd"></label>
+  <input type="hidden" name="oldCode" value="<%=oldCode%>"> 
   <div class="col-md-8">
-																							//* Prendre le code dans URL
-    <a href <button id="buttonAdd" name="buttonAdd" class="btn btn-success" onclick='ModifierPizza(<%=p %>,<%= %>)'>Editer</button>></a>
+													
+    <button type="submit" id="buttonAdd" name="buttonAdd" class="btn btn-success">Valider</button>
    <button id="buttonCancel" name="buttonCancel" class="btn btn-danger">Annuler</button>
   </div>
 </div>
+
+
 
 </fieldset>
 </form>
 
 </div>
-<body>
+
 </body>
 </html>

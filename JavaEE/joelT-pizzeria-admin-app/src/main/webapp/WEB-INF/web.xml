@@ -47,5 +47,16 @@
 	<url-pattern>/api/servlet/new</url-pattern>
 </servlet-mapping>
 
+
+ <servlet>
+    <servlet-name>DeletePizzaController</servlet-name>
+    <servlet-class>fr.pizzeria.admin.web.DeletePizzaController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>DeletePizzaController</servlet-name>
+	<url-pattern>/api/servlet/delete</url-pattern>
+</servlet-mapping>
+
 </web-app>
 

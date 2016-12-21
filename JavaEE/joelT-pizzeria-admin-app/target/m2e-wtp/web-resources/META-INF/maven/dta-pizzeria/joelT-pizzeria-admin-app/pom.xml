@@ -1,18 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>dta-pizzeria</groupId>
 		<artifactId>joelT-pizzeria-parent</artifactId>
 		<version>1.0.0</version>
 		<relativePath>../joelT-pizzeria-parent</relativePath>
 	</parent>
-	
+
 	<artifactId>joelT-pizzeria-admin-app</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<name>pizzeria-admin-app Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
@@ -64,6 +64,10 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
 
 	</dependencies>
 	<build>
