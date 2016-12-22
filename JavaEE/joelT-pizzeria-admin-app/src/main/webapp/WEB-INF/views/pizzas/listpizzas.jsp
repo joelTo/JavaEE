@@ -45,9 +45,9 @@
 					<td><img class="img-responsive"
 						src="<%= request.getContextPath() %>${pizza.url}"
 						style="width: 15%" /></td>
-						<td><a href="/pizzeria-admin-app/api/servlet/edit?code=${pizza.code}"><button  type="button" class="btn btn-secondary">Modifier</button></a></td>
+						<td><a href="/pizzeria-admin-app/api/pizza/edit?code=${pizza.code}"><button  type="button" class="btn btn-secondary">Modifier</button></a></td>
 						
-						<td><a href="/pizzeria-admin-app/api/servlet/delete?code=${pizza.code}"><button type="button" class="btn btn-secondary" >Supprimer</button> </a></td>
+						<td><a href="/pizzeria-admin-app/api/pizza/delete?code=${pizza.code}"><button type="button" class="btn btn-secondary" >Supprimer</button> </a></td>
 				</tr>				
 				</c:forEach>
 				

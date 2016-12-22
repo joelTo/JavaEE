@@ -11,7 +11,6 @@
 
 	<artifactId>joelT-pizzeria-admin-app</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
 
 	<name>pizzeria-admin-app Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -43,25 +42,21 @@
 		<dependency>
 			<groupId>dta-pizzeria</groupId>
 			<artifactId>joelT-pizzeria-dao</artifactId>
-			<version>1.0.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>dta-pizzeria</groupId>
 			<artifactId>joelT-pizzeria-model</artifactId>
-			<version>1.0.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
