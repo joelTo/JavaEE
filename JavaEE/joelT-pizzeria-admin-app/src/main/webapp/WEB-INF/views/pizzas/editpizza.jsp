@@ -1,6 +1,8 @@
 <%@page import="fr.model.Pizza"%>
 <%@page import="java.util.List"%>
 <%@page import="fr.dao.PizzaDaoBaseJPA"%>
+<%@ page  isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html >
@@ -13,7 +15,7 @@
 	rel="stylesheet">
 </head>
 
-
+<c:set var="pizza" value="${PizzaAModifer}"/>
 <body>
 
 <div>
@@ -23,15 +25,14 @@
 <!-- Form Name -->
 <legend>Edition Pizza</legend>
 
-<% Pizza p = (Pizza) request.getAttribute("PizzaAModifer");    
-   String oldCode = (String) request.getAttribute("OldCode");%>
+<%    String oldCode = (String) request.getAttribute("OldCode");%>
 
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="codePizza">Code</label>  
   <div class="col-md-4">
-  <input id="codePizza" name="codePizza" type="text" value="<%=p.getCode()%>" class="form-control input-md">
+  <input id="codePizza" name="codePizza" type="text" value="${pizza.code}" class="form-control input-md">
     
   </div>
 </div>
@@ -40,7 +41,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="libellePizza">Libellé Pizza :</label>  
   <div class="col-md-4">
-  <input id="libellePizza" name="libellePizza" type="text" value="<%=p.getNom()%>" class="form-control input-md">
+  <input id="libellePizza" name="libellePizza" type="text" value="${pizza.nom}"  class="form-control input-md">
     
   </div>
 </div>
@@ -49,7 +50,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="prixPizza">Prix :</label>  
   <div class="col-md-4">
-  <input id="prixPizza" name="prixPizza" type="text" value="<%=p.getPrix()%>" class="form-control input-md">
+  <input id="prixPizza" name="prixPizza" type="text" value="${pizza.prix}" class="form-control input-md">
     
   </div>
 </div>
@@ -58,7 +59,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="catPizza">Catégorie :</label>  
   <div class="col-md-4">
-  <input id="catPizza" name="catPizza" type="text" value="<%=p.getCatPizza()%>" class="form-control input-md">
+  <input id="catPizza" name="catPizza" type="text" value="${pizza.catPizza}" class="form-control input-md">
     
   </div>
 </div>
