@@ -19,4 +19,20 @@ public class PizzaServiceEJB {
 		TypedQuery<Pizza> empizza = em.createQuery("SELECT p FROM Pizza p", Pizza.class);
 		return empizza.getResultList();
 	}
+
+	public void save(Pizza newPizza) {
+		em.persist(newPizza);
+	}
+
+	public Pizza findByCode(String codePizza) {
+		return em.createNamedQuery("code.findByCode", Pizza.class).setParameter("name", codePizza).getSingleResult();
+	}
+
+	public void delete(String pizzaToDelete) {
+		Pizza pem = findByCode(pizzaToDelete);
+		if (findByCode(pizzaToDelete).getCode().equals(pizzaToDelete)) {
+			em.remove(pem);
+		}
+	}
+
 }
