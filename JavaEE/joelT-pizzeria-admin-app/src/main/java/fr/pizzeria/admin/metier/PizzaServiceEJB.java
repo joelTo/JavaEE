@@ -12,7 +12,7 @@ import fr.model.Pizza;
 @Stateless
 public class PizzaServiceEJB {
 
-	@PersistenceContext(unitName = "pizzadb")
+	@PersistenceContext(unitName = "joelT-pizzeria-console")
 	private EntityManager em;
 
 	public List<Pizza> findAllPizza() {

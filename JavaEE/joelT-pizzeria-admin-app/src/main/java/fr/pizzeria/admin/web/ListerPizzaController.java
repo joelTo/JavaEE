@@ -17,6 +17,8 @@ public class ListerPizzaController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("listPizza", pizzaService.findAllPizza());
+		// PrintWriter writer = resp.getWriter();
+		// writer.write("TEst je suis la ");
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/pizzas/listpizzas.jsp").forward(req, resp);
 	}
 
