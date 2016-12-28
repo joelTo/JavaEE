@@ -6,3 +6,6 @@ Premier fivhier( ici mintroduction dans le 2 eme fichiers du conflit)
 Deuxième fichier.
 
 Amelioration de mes compétences sur Git GUI
+
+
+3 commits sont de mises ici.
