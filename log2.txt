@@ -1,6 +1,6 @@
 test (mdification ici à ce niveau)
 
-Premier fivhier
+Premier fivhier(2 eme modification,)on essaye d'introduire un conflit maintenant puisque le precedent n'a pas marcher 
 
 
 Deuxième fichier.
