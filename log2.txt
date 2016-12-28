@@ -1,6 +1,8 @@
-test (mdification ici à ce niveau)
+test (mdification ici à ce niveau)(et oui )
+
 
 Premier fivhier(2 eme modification,)on essaye d'introduire un conflit maintenant puisque le precedent n'a pas marcher 
+
 
 
 Deuxième fichier.
@@ -9,3 +11,7 @@ Amelioration de mes compétences sur Git GUI
 
 Fichier dans la branche master attention, 
 c est notre branche commune.
+
+3 commits sont de mises ici.
+1- effectué
+2- effectué
