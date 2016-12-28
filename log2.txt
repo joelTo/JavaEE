@@ -6,3 +6,6 @@ Premier fivhier(2 eme modification,)on essaye d'introduire un conflit maintenant
 Deuxième fichier.
 
 Amelioration de mes compétences sur Git GUI
+
+Fichier dans la branche master attention, 
+c est notre branche commune.
