@@ -1,6 +1,6 @@
-test (mdification ici à ce niveau)
+test (mdification ici à ce niveau)(et oui )
 
-Premier fivhier
+Premier fivhier( ici mintroduction dans le 2 eme fichiers du conflit)
 
 
 Deuxième fichier.
