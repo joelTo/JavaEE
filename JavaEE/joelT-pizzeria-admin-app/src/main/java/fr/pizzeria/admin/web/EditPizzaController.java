@@ -42,7 +42,7 @@ public class EditPizzaController extends HttpServlet {
 			pizzaBaseJPA.update(new Pizza(req.getParameter("codePizza"), req.getParameter("libellePizza"),
 					CategoriePizza.valueOf(req.getParameter("catPizza")),
 					Double.parseDouble(req.getParameter("prixPizza"))), req.getParameter("oldCode"));
-			resp.sendRedirect("/pizzeria-admin-app/api/servlet/list");
+			resp.sendRedirect("/pizzeria-admin-app/api/pizza/list");
 		} catch (UpdatesPizzaException e) {
 			// Afficher un messageerreur
 			e.printStackTrace();

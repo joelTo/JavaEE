@@ -1,4 +1,9 @@
-C:\Users\DevOps-JoelT\Downloads\tp_JavaEE-master\tp_JavaEE-master\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\EditPizzaController.java
-C:\Users\DevOps-JoelT\Downloads\tp_JavaEE-master\tp_JavaEE-master\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\ListerPizzaController.java
-C:\Users\DevOps-JoelT\Downloads\tp_JavaEE-master\tp_JavaEE-master\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\AddPizzaController.java
-C:\Users\DevOps-JoelT\Downloads\tp_JavaEE-master\tp_JavaEE-master\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\PizzaServletWebApi.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\AddPizzaController.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\metier\PizzaService.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\AuthAdminController.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\DeletePizzaController.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\SignOutAdminController.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\EditPizzaController.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\ListerPizzaController.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\PizzaServletWebApi.java
+C:\Users\ETY2\Downloads\tp_JavaEE\JavaEE\joelT-pizzeria-admin-app\src\main\java\fr\pizzeria\admin\web\ProtectFilter.java

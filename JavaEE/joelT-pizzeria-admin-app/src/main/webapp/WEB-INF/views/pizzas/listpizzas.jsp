@@ -1,6 +1,8 @@
 <%@page import="fr.model.Pizza"%>
 <%@page import="java.util.List"%>
 <%@page import="fr.dao.PizzaDaoBaseJPA"%>
+<%@ page  isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -19,6 +21,7 @@
 	<header>
 	<h1>Liste des Pizzas :</h1>
 	</header>
+	<p>  <c:out value=" ${sessionScope.name} "/></p>
 	<div>
 		<table class="table">
 			<thead>
@@ -32,24 +35,22 @@
 			<tbody>
 
 
-				<% List<Pizza> list = (List<Pizza>) request.getAttribute("listPizza");
-        for (Pizza p : list) {    %>
 
+				<c:forEach var="pizza" items="${listPizza}">
 				<tr>
-					<td><%=p.getId() %></td>
-					<td><%=p.getCode() %></td>
-					<td><%=p.getNom() %></td>
-					<td><%=p.getPrix() %></td>
+					<td>${pizza.id}</td>
+					<td>${pizza.code}</td>
+					<td>${pizza.nom}</td>
+					<td>${pizza.prix}</td>
 					<td><img class="img-responsive"
-						src="<%= request.getContextPath() %><%=p.getUrl() %>"
+						src="<%= request.getContextPath() %>${pizza.url}"
 						style="width: 15%" /></td>
-						<td><a href="/pizzeria-admin-app/api/servlet/edit?code=<%=p.getCode() %>"><button  type="button" class="btn btn-secondary">Modifier</button></a></td>
+						<td><a href="/pizzeria-admin-app/api/pizza/edit?code=${pizza.code}"><button  type="button" class="btn btn-secondary">Modifier</button></a></td>
 						
-						<td><a href="/pizzeria-admin-app/api/servlet/delete?code=<%=p.getCode() %>"><button type="button" class="btn btn-secondary" >Supprimer</button> </a></td>
-				</tr>
-				<%
-        }
-    %>
+						<td><a href="/pizzeria-admin-app/api/pizza/delete?code=${pizza.code}"><button type="button" class="btn btn-secondary" >Supprimer</button> </a></td>
+				</tr>				
+				</c:forEach>
+				
 			</tbody>
 
 

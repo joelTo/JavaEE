@@ -75,27 +75,27 @@
 			<dependency>
 				<groupId>dta-pizzeria</groupId>
 				<artifactId>joelT-pizzeria-dao</artifactId>
-				<version>${projet.version}</version>
+				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>dta-pizzeria</groupId>
 				<artifactId>joelT-pizzeria-model</artifactId>
-				<version>${projet.version}</version>
+				<version>${project.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.hibernate.javax.persistence</groupId>
 				<artifactId>hibernate-jpa-2.1-api</artifactId>
 				<version>${jpa-persistence.version}</version>
-				<scope>compile</scope>
+				<scope>provided</scope>
 			</dependency>
 
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-entitymanager</artifactId>
 				<version>${hibernate-entitymanager.version}</version>
-				<scope>compile</scope>
+				<scope>provided</scope><!-- Mettre en <Scope>provided -->
 			</dependency>
 
 			<dependency>

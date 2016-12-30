@@ -9,7 +9,7 @@
 
 <servlet-mapping>
 	<servlet-name>PizzaServletWebApi</servlet-name>
-	<url-pattern>/api/servlet/pizzas</url-pattern>
+	<url-pattern>/api/pizza/pizzas</url-pattern>
 </servlet-mapping>
 
 
@@ -22,7 +22,7 @@
 
 <servlet-mapping>
 	<servlet-name>ListerPizzaController</servlet-name>
-	<url-pattern>/api/servlet/list</url-pattern>
+	<url-pattern>/api/pizza/list</url-pattern>
 </servlet-mapping>
 
 
@@ -34,7 +34,7 @@
 
 <servlet-mapping>
 	<servlet-name>EditPizzaController</servlet-name>
-	<url-pattern>/api/servlet/edit</url-pattern>
+	<url-pattern>/api/pizza/edit</url-pattern>
 </servlet-mapping>
 
  <servlet>
@@ -44,8 +44,42 @@
 
 <servlet-mapping>
 	<servlet-name>AddPizzaController</servlet-name>
-	<url-pattern>/api/servlet/new</url-pattern>
+	<url-pattern>/api/pizza/new</url-pattern>
 </servlet-mapping>
+
+
+ <servlet>
+    <servlet-name>DeletePizzaController</servlet-name>
+    <servlet-class>fr.pizzeria.admin.web.DeletePizzaController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>DeletePizzaController</servlet-name>
+	<url-pattern>/api/pizza/delete</url-pattern>
+</servlet-mapping>
+
+
+ <servlet>
+    <servlet-name>AuthAdminController</servlet-name>
+    <servlet-class>fr.pizzeria.admin.web.AuthAdminController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>AuthAdminController</servlet-name>
+	<url-pattern>/api/login/AuthAdminController</url-pattern>
+</servlet-mapping>
+
+ <servlet>
+    <servlet-name>SignOutAdminController</servlet-name>
+    <servlet-class>fr.pizzeria.admin.web.SignOutAdminController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>SignOutAdminController</servlet-name>
+	<url-pattern>/api/login/SignOut</url-pattern>
+</servlet-mapping>
+
+
 
 </web-app>
 

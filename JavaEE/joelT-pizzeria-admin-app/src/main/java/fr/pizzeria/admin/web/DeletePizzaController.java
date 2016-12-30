@@ -25,7 +25,7 @@ public class DeletePizzaController extends HttpServlet {
 			if (pizzaBaseJPA.findAll().stream().filter(p -> p.getCode().equals(code)).findFirst().isPresent()) {
 				try {
 					pizzaBaseJPA.delete(code);
-					resp.sendRedirect("/pizzeria-admin-app/api/servlet/list");
+					resp.sendRedirect("/pizzeria-admin-app/api/pizza/list");
 				} catch (DeletePizzaException e) {
 					// Génerer lees pages d'erreurs --> impossible de trouver la
 					// pizza dans la base
