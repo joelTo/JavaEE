@@ -35,4 +35,10 @@ public class PizzaServiceEJB {
 		}
 	}
 
+	public void update(Pizza pizzaUdate, String oldCode) {
+		Pizza emp = findByCode(oldCode);
+		em.persist(emp);
+		em.persist(pizzaUdate);
+	}
+
 }

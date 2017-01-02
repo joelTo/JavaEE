@@ -2,7 +2,8 @@ package fr.console;
 
 import java.sql.SQLException;
 
-import fr.dao.PizzaDaoBaseJPA;
+import fr.dao.IPizzaDao;
+import fr.dao.PizzaDaoFactory;
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
@@ -51,7 +52,11 @@ public class PizzeriaAdminConsoleApp {
 		// PizzaDaoFichier test = new PizzaDaoFichier();
 		// System.out.println(test.findAll());
 
-		PizzaDaoBaseJPA test = new PizzaDaoBaseJPA();
+		// PizzaDaoBaseJPA test = new PizzaDaoBaseJPA();
+
+		PizzaDaoFactory opt = new IPizzaDao();
+		System.out.println(opt.findAll());
+
 		// test.save(new Pizza("ORI", "L’orientale", CategoriePizza.VIANDE,
 		// 13.50));
 		// test.save(new Pizza("ORI", "L’orientale", CategoriePizza.VIANDE,

@@ -48,7 +48,7 @@ public class Pizza {
 		this.catPizza = catPizza;
 	}
 
-	private static int nbPizzas;
+	// private static int nbPizzas;
 
 	public Pizza(String code, String nom, CategoriePizza catPizza, double prix) {
 		this.code = code;
@@ -64,7 +64,7 @@ public class Pizza {
 		this.nom = nom;
 		this.prix = prix;
 		this.catPizza = catPizza;
-		nbPizzas++;
+		// nbPizzas++;
 	}
 
 	public boolean equals(Pizza obj) {
@@ -87,9 +87,9 @@ public class Pizza {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getNbPizzas() {
-		return nbPizzas;
-	}
+	/*
+	 * public int getNbPizzas() { return nbPizzas; }
+	 */
 
 	public int getId() {
 		return id;

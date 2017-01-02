@@ -31,6 +31,7 @@
 			dependance de la base de donnee JPA hibernate -->
 		<javaee-api.version>7.0</javaee-api.version> <!-- dependance concernant le module pizzeria-admin-app pour le HTTPServlet -->
 		<jstl.version>1.2</jstl.version> <!-- dependance utilisation des jstl https://mvnrepository.com/artifact/jstl/jstl -->
+		<jersey-client.version>1.19.3</jersey-client.version><!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
 	</properties>
 
 
@@ -105,11 +106,23 @@
 				<scope>provided</scope>
 			</dependency>
 
-			
+
 			<dependency>
 				<groupId>jstl</groupId>
 				<artifactId>jstl</artifactId>
 				<version>${jstl.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.glassfish.jersey.core</groupId>
+				<artifactId>jersey-client</artifactId>
+				<version>2.5</version>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.jersey.media</groupId>
+				<artifactId>jersey-media-json-jackson</artifactId>
+				<version>2.5</version>
 			</dependency>
 
 
