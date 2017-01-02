@@ -3,6 +3,7 @@ package fr.pizzeria.admin.metier.rest;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -12,7 +13,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import fr.model.CategoriePizza;
 import fr.model.Pizza;
 import fr.pizzeria.admin.metier.PizzaServiceEJB;
 
@@ -28,20 +28,16 @@ public class ClientRessources {
 	}
 
 	@POST
-	@Path("/{code}/{reference}/{prix}/{cat}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public void createPizza(@PathParam("code") String code, @PathParam("reference") String reference,
-			@PathParam("prix") Double prix, @PathParam("cat") String cat) {
-		pizzaJPA.save(new Pizza(code, reference, CategoriePizza.valueOf(cat), prix));
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void createPizza(Pizza p) {
+		pizzaJPA.save(p);
 	}
 
 	@PUT
-	@Path("{id}/{oldCode}/{code}/{reference}/{prix}/{cat}")
-	public void updatePizza(@PathParam("id") Integer id, @PathParam("code") String code,
-			@PathParam("reference") String reference, @PathParam("prix") Double prix, @PathParam("cat") String cat,
-			@PathParam("oldCode") String oldCode) {
-
-		pizzaJPA.update((new Pizza(id, code, reference, CategoriePizza.valueOf(cat), prix)), oldCode);
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/{oldCode}")
+	public void updatePizza(Pizza pizza, @PathParam("oldCode") String oldCode) {
+		pizzaJPA.update(pizza, oldCode);
 	}
 
 	@DELETE

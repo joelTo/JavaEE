@@ -37,8 +37,12 @@ public class PizzaServiceEJB {
 
 	public void update(Pizza pizzaUdate, String oldCode) {
 		Pizza emp = findByCode(oldCode);
+		emp.setCode(pizzaUdate.getCode());
+		emp.setNom(pizzaUdate.getNom());
+		emp.setPrix(pizzaUdate.getPrix());
+		emp.setCatPizza(pizzaUdate.getCatPizza());
+		emp.setUrl(pizzaUdate.getUrl());
 		em.persist(emp);
-		em.persist(pizzaUdate);
 	}
 
 }

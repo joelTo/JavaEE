@@ -38,7 +38,11 @@ public class IPizzaDao implements PizzaDaoFactory {
 
 	@Override
 	public void save(Pizza newPizza) throws SavePizzaException, SQLException {
-
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target("http://www.example.com/api/customers");
+		// String response =
+		// target.request(MediaType.APPLICATION_JSON).accept(MediaType.TEXT_PLAIN_TYPE)
+		// .post(Entity.json(newCustomer), String.class);
 	}
 
 	@Override
