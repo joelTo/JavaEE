@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
@@ -27,8 +28,7 @@ public class IPizzaDao implements PizzaDaoFactory {
 		clientConfig.register(JacksonFeature.class);
 		Client client = ClientBuilder.newClient(clientConfig);
 		WebTarget webTarget = client.target("http://localhost:8080/pizzeria-admin-app/api/pizza");
-		Builder request = webTarget.request();
-		request.header("Content-type", MediaType.APPLICATION_XHTML_XML);
+		Builder request = webTarget.request().accept(MediaType.APPLICATION_JSON);
 		Response response = request.get();
 
 		List<Pizza> pizzas = response.readEntity(new GenericType<List<Pizza>>() {
@@ -40,9 +40,8 @@ public class IPizzaDao implements PizzaDaoFactory {
 	public void save(Pizza newPizza) throws SavePizzaException, SQLException {
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target("http://www.example.com/api/customers");
-		// String response =
-		// target.request(MediaType.APPLICATION_JSON).accept(MediaType.TEXT_PLAIN_TYPE)
-		// .post(Entity.json(newCustomer), String.class);
+		target.request().post(Entity.entity(newPizza, MediaType.APPLICATION_JSON), Pizza.class);
+
 	}
 
 	@Override

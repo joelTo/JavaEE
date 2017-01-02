@@ -7,6 +7,8 @@ import fr.dao.PizzaDaoFactory;
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
+import fr.model.CategoriePizza;
+import fr.model.Pizza;
 
 public class PizzeriaAdminConsoleApp {
 
@@ -56,7 +58,7 @@ public class PizzeriaAdminConsoleApp {
 
 		PizzaDaoFactory opt = new IPizzaDao();
 		System.out.println(opt.findAll());
-
+		opt.save(new Pizza("ORI", "L’orientale", CategoriePizza.VIANDE, 13.50));
 		// test.save(new Pizza("ORI", "L’orientale", CategoriePizza.VIANDE,
 		// 13.50));
 		// test.save(new Pizza("ORI", "L’orientale", CategoriePizza.VIANDE,
