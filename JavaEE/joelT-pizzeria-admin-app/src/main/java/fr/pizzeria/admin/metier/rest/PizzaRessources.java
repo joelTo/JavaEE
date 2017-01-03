@@ -1,4 +1,3 @@
-
 package fr.pizzeria.admin.metier.rest;
 
 import java.util.List;
@@ -14,36 +13,36 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import fr.model.Client;
-import fr.pizzeria.admin.metier.ClientServiceEJB;
+import fr.model.Pizza;
+import fr.pizzeria.admin.metier.PizzaServiceEJB;
 
-@Path("/clients")
-public class ClientRessources {
+@Path("/pizza")
+public class PizzaRessources {
 	@Inject
-	private ClientServiceEJB clientJPA;
+	private PizzaServiceEJB pizzaJPA;
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Client> list() {
-		return clientJPA.FindClient();
+	public List<Pizza> list() {
+		return pizzaJPA.findAllPizza();
 	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void createClient(Client p) {
-		clientJPA.save(p);
+	public void createPizza(Pizza p) {
+		pizzaJPA.save(p);
 	}
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/{oldCode}")
-	public void updateClient(Client Client, @PathParam("id") Integer id) {
-		clientJPA.update(Client, id);
+	public void updatePizza(Pizza pizza, @PathParam("oldCode") String oldCode) {
+		pizzaJPA.update(pizza, oldCode);
 	}
 
 	@DELETE
-	@Path("{id}")
-	public void deleteClient(@PathParam("id") Integer id) {
-		clientJPA.delete(id);
+	@Path("{code}")
+	public void deletePizza(@PathParam("code") String code) {
+		pizzaJPA.delete(code);
 	}
 }

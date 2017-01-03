@@ -6,16 +6,16 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 import fr.ihm.IhmUtilClient;
 import fr.model.Client;
-import fr.model.NomComplet;
 
-public class InscriptionClient extends ActionClient{
+public class InscriptionClient extends ActionClient {
 	private IhmUtilClient ihmUtilCleint;
 
-	public  InscriptionClient(IhmUtilClient ihm) {
+	public InscriptionClient(IhmUtilClient ihm) {
 		super();
 		this.setDescription("S'inscrire");
-		this.ihmUtilCleint=ihm;
+		this.ihmUtilCleint = ihm;
 	}
+
 	@Override
 	public void doAction() {
 		System.out.println("");
@@ -27,18 +27,15 @@ public class InscriptionClient extends ActionClient{
 		String email = ihmUtilCleint.getScanner().next();
 		System.out.println("Veuillez entrer votre mot de passe :");
 		String motDePasse = DigestUtils.md5Hex(ihmUtilCleint.getScanner().next());
-		ihmUtilCleint.getClientDao().signIn(new Client(new NomComplet(nom,prenom),email,motDePasse));
-		
-		
+		ihmUtilCleint.getClientDao().signIn(new Client(nom, prenom, email, motDePasse));
 
 	}
 
 	@Override
 	public void describeAction() {
-		 Logger.getLogger(this.getDescription()); 
-		 System.out.println(this.getDescription());
+		Logger.getLogger(this.getDescription());
+		System.out.println(this.getDescription());
 
 	}
-
 
 }

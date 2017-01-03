@@ -1,7 +1,6 @@
 package fr.model;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,17 +12,25 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Embedded
-	private NomComplet nomComplet;
+	@Column(name = "name", length = 30, nullable = false)
+	private String name;
+
+	@Column(name = "lastname", length = 30, nullable = false)
+	private String lastname;
+
 	@Column(name = "EMAIL", length = 30, nullable = false, unique = true)
 	private String email;
 
 	@Column(name = "mdp", length = 30, nullable = false)
 	private String mdp;
 
-	public Client(NomComplet nomComplet, String email, String mdp) {
+	public Client() {
+	}
+
+	public Client(String name, String lastname, String email, String mdp) {
 		super();
-		this.nomComplet = nomComplet;
+		this.name = name;
+		this.lastname = lastname;
 		this.email = email;
 		this.mdp = mdp;
 	}
@@ -34,6 +41,22 @@ public class Client {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getEmail() {

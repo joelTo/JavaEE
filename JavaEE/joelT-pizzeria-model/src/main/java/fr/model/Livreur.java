@@ -1,6 +1,6 @@
 package fr.model;
 
-import javax.persistence.Embedded;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,8 +12,11 @@ public class Livreur {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Embedded
-	private NomComplet nomComplet;
+	@Column(name = "name", length = 30, nullable = false)
+	private String name;
+
+	@Column(name = "lastname", length = 30, nullable = false)
+	private String lastname;
 
 	public Integer getId() {
 		return id;
@@ -23,12 +26,20 @@ public class Livreur {
 		this.id = id;
 	}
 
-	public NomComplet getNomComplet() {
-		return nomComplet;
+	public String getName() {
+		return name;
 	}
 
-	public void setNomComplet(NomComplet nomComplet) {
-		this.nomComplet = nomComplet;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 }
