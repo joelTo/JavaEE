@@ -2,6 +2,7 @@ package fr.ihm;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import fr.dao.PizzaDaoFactory;
@@ -11,8 +12,10 @@ public class IhmUtil {
 
 	private Scanner scanner;
 	private PizzaDaoFactory pizzaDao;
+
 	// private Logger log = Logger.getLogger();
 
+	@Autowired
 	public IhmUtil(Scanner scanner, PizzaDaoFactory pizzaDao) {
 		super();
 		this.scanner = scanner;

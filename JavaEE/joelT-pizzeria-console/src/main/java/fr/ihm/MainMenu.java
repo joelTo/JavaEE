@@ -4,6 +4,9 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
@@ -16,10 +19,13 @@ import fr.ihm.action.ListPizzaGroupeCategorie;
 import fr.ihm.action.ListPizzaTarifEleve;
 import fr.ihm.action.UpdatePizza;
 
+@Component
 public class MainMenu {
 	private Map<Integer, Action> map = new TreeMap<Integer, Action>();
+
 	private IhmUtil ihmUtil;
 
+	@Autowired
 	public MainMenu(IhmUtil ihmUtil) {
 
 		map.put(1, new ListPizza(ihmUtil));
