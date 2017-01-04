@@ -20,6 +20,8 @@ public class PizzeriaAdminConsoleApp {
 		/**
 		 * Pour le lancement
 		 */
+		//
+		//
 		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dao-jdbc-config.xml",
 				"application-config.xml")) {
 			IhmUtil ihmUtil = context.getBean(IhmUtil.class);

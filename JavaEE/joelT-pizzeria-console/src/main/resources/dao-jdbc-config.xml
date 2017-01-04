@@ -8,5 +8,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
+
+
 <bean id="pizzaDaoJDBC" class="fr.dao.PizzaDaoBaseDeDonneeJDBC"></bean>
 </beans>
