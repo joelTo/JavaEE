@@ -27,6 +27,7 @@ public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
 		password = bunble.getString("password.jdbc");
 	}
 
+	// e
 	interface IRunSql<T> {
 		T exec(Statement st) throws SQLException;
 	}
