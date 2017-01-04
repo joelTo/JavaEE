@@ -1,9 +1,14 @@
 package fr.ihm.action;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class ExitMenu extends Action {
 
-	public ExitMenu() {
-		super();
+	@PostConstruct
+	public void init() {
 		this.setDescription("Sortir");
 	}
 

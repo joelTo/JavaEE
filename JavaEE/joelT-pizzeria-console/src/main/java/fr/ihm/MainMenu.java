@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import fr.exception.DeletePizzaException;
@@ -27,17 +28,19 @@ public class MainMenu {
 
 	@Autowired
 	private IhmUtil ihmUtil;
+	@Autowired
+	private ApplicationContext context;
 
 	@PostConstruct
 	public void init() {
 
-		map.put(1, new ListPizza(ihmUtil));
-		map.put(2, new AddPizza(ihmUtil));
-		map.put(3, new UpdatePizza(ihmUtil));
-		map.put(4, new DeletePizza(ihmUtil));
-		map.put(5, new ListPizzaGroupeCategorie(ihmUtil));
-		map.put(6, new ListPizzaTarifEleve(ihmUtil));
-		map.put(99, new ExitMenu());
+		map.put(1, context.getBean(ListPizza.class));
+		map.put(2, context.getBean(AddPizza.class));
+		map.put(3, context.getBean(UpdatePizza.class));
+		map.put(4, context.getBean(DeletePizza.class));
+		map.put(5, context.getBean(ListPizzaGroupeCategorie.class));
+		map.put(6, context.getBean(ListPizzaTarifEleve.class));
+		map.put(99, context.getBean(ExitMenu.class));
 
 	}
 

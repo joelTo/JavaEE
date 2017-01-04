@@ -3,15 +3,20 @@ package fr.ihm.action;
 import java.sql.SQLException;
 import java.util.stream.Stream;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import fr.ihm.IhmUtil;
 
+@Component
 public class ListPizza extends Action {
-
+	@Autowired
 	private IhmUtil ihmUtil;
 
-	public ListPizza(IhmUtil ihmUtil) {
-		super();
-		this.ihmUtil = ihmUtil;
+	@PostConstruct
+	public void init() {
 		this.setDescription("Lister les pizzas");
 	}
 

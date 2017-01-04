@@ -5,15 +5,21 @@ import java.util.Comparator;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import fr.ihm.IhmUtil;
 import fr.model.Pizza;
 
+@Component
 public class ListPizzaTarifEleve extends Action {
+	@Autowired
 	private IhmUtil ihmUtil;
 
-	public ListPizzaTarifEleve(IhmUtil ihmUtil) {
-		super();
-		this.ihmUtil = ihmUtil;
+	@PostConstruct
+	public void init() {
 		this.setDescription("Liste la Pizza au Tarif le plus eleve");
 
 	}

@@ -3,19 +3,24 @@ package fr.ihm.action;
 import java.sql.SQLException;
 import java.util.stream.Stream;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import fr.exception.SavePizzaException;
 import fr.ihm.IhmUtil;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
+@Component
 public class AddPizza extends Action {
-
+	@Autowired
 	private IhmUtil ihmUtil;
 
-	public AddPizza(IhmUtil ihmUtil) {
-		super();
+	@PostConstruct
+	public void init() {
 		this.setDescription("Ajouter une nouvelle pizza");
-		this.ihmUtil = ihmUtil;
 	}
 
 	@Override

@@ -5,17 +5,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import fr.ihm.IhmUtil;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
+@Component
 public class ListPizzaGroupeCategorie extends Action {
-
+	@Autowired
 	private IhmUtil ihmUtil;
 
-	public ListPizzaGroupeCategorie(IhmUtil ihmUtil) {
-		super();
-		this.ihmUtil = ihmUtil;
+	@PostConstruct
+	public void init() {
 		this.setDescription("Liste les pizza par groupe categorie");
 	}
 

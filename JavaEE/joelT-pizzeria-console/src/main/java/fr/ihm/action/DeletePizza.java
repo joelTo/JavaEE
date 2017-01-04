@@ -2,17 +2,22 @@ package fr.ihm.action;
 
 import java.sql.SQLException;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import fr.exception.DeletePizzaException;
 import fr.ihm.IhmUtil;
 
+@Component
 public class DeletePizza extends Action {
-
+	@Autowired
 	private IhmUtil ihmUtil;
 
-	public DeletePizza(IhmUtil e) {
-		super();
+	@PostConstruct
+	public void init() {
 		this.setDescription("Supprimer une pizza");
-		this.ihmUtil = e;
 	}
 
 	@Override
