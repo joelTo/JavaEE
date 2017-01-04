@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,10 +25,11 @@ import fr.ihm.action.UpdatePizza;
 public class MainMenu {
 	private Map<Integer, Action> map = new TreeMap<Integer, Action>();
 
+	@Autowired
 	private IhmUtil ihmUtil;
 
-	@Autowired
-	public MainMenu(IhmUtil ihmUtil) {
+	@PostConstruct
+	public void init() {
 
 		map.put(1, new ListPizza(ihmUtil));
 		map.put(2, new AddPizza(ihmUtil));
@@ -35,7 +38,7 @@ public class MainMenu {
 		map.put(5, new ListPizzaGroupeCategorie(ihmUtil));
 		map.put(6, new ListPizzaTarifEleve(ihmUtil));
 		map.put(99, new ExitMenu());
-		this.ihmUtil = ihmUtil;
+
 	}
 
 	public void displayMenu() {

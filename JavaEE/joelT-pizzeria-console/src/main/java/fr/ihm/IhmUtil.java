@@ -10,17 +10,10 @@ import fr.dao.PizzaDaoFactory;
 @Component
 public class IhmUtil {
 
-	private Scanner scanner;
-	private PizzaDaoFactory pizzaDao;
-
-	// private Logger log = Logger.getLogger();
-
 	@Autowired
-	public IhmUtil(Scanner scanner, PizzaDaoFactory pizzaDao) {
-		super();
-		this.scanner = scanner;
-		this.pizzaDao = pizzaDao;
-	}
+	private Scanner scanner;
+	@Autowired
+	private PizzaDaoFactory pizzaDao;
 
 	public Scanner getScanner() {
 		return this.scanner;

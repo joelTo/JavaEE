@@ -24,10 +24,10 @@ public class PizzeriaAdminConsoleApp {
 		try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
 				PizzeriaAppSpringConfig.class)) {
 			MainMenu core = context.getBean(MainMenu.class);
-
-			core.displayMenu();
-			core.parseAndExec();
-
+			while (true) {
+				core.displayMenu();
+				core.parseAndExec();
+			}
 		}
 
 	}
