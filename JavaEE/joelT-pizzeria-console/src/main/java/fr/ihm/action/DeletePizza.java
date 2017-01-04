@@ -1,19 +1,22 @@
 package fr.ihm.action;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import fr.dao.PizzaDaoFactory;
 import fr.exception.DeletePizzaException;
-import fr.ihm.IhmUtil;
 
 @Component
 public class DeletePizza extends Action {
 	@Autowired
-	private IhmUtil ihmUtil;
+	private Scanner scanner;
+	@Autowired
+	private PizzaDaoFactory pizzaDao;
 
 	@PostConstruct
 	public void init() {
@@ -24,8 +27,8 @@ public class DeletePizza extends Action {
 	public void doAction() throws DeletePizzaException, SQLException {
 		System.out.println("");
 		System.out.println("Veuillez entrerle code <Alias de pizza a supprimer, s'il vous plait");
-		String pizzaToDelete = ihmUtil.getScanner().next();
-		ihmUtil.getPizzaDao().delete(pizzaToDelete);
+		String pizzaToDelete = scanner.next();
+		pizzaDao.delete(pizzaToDelete);
 	}
 
 	@Override

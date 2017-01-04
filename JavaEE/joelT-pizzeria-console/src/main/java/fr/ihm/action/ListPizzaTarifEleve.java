@@ -10,13 +10,13 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import fr.ihm.IhmUtil;
+import fr.dao.PizzaDaoFactory;
 import fr.model.Pizza;
 
 @Component
 public class ListPizzaTarifEleve extends Action {
 	@Autowired
-	private IhmUtil ihmUtil;
+	private PizzaDaoFactory pizzaDao;
 
 	@PostConstruct
 	public void init() {
@@ -27,8 +27,8 @@ public class ListPizzaTarifEleve extends Action {
 	@Override
 	public void doAction() throws SQLException {
 		System.out.println("je liste le prix le plus élevé par moins élevé");
-		this.ihmUtil.getPizzaDao().findAll().stream().collect(Collectors.groupingBy(Pizza::getPrix));
-		Optional<Pizza> max = this.ihmUtil.getPizzaDao().findAll().stream().max(Comparator.comparing(Pizza::getPrix));
+		this.pizzaDao.findAll().stream().collect(Collectors.groupingBy(Pizza::getPrix));
+		Optional<Pizza> max = this.pizzaDao.findAll().stream().max(Comparator.comparing(Pizza::getPrix));
 		System.out.println(max.get());
 
 	}

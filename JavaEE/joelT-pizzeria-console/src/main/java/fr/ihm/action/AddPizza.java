@@ -1,6 +1,7 @@
 package fr.ihm.action;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
@@ -8,15 +9,17 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import fr.dao.PizzaDaoFactory;
 import fr.exception.SavePizzaException;
-import fr.ihm.IhmUtil;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
 @Component
 public class AddPizza extends Action {
 	@Autowired
-	private IhmUtil ihmUtil;
+	private Scanner scanner;
+	@Autowired
+	private PizzaDaoFactory pizzaDao;
 
 	@PostConstruct
 	public void init() {
@@ -28,19 +31,19 @@ public class AddPizza extends Action {
 
 		System.out.println("");
 		System.out.println("Veuillez entrer l'alias de la nouvelle pizza s'il vous plait");
-		String code = ihmUtil.getScanner().next();
+		String code = scanner.next();
 		System.out.println("Veuillez entrer le nom de la nouvelle pizza s'il vous plait");
-		String nom = ihmUtil.getScanner().next();
+		String nom = scanner.next();
 		System.out.println("Veuillez entrer le Cat�gorie de la nouvelle pizza s'il vous plait");
 		Stream.of(CategoriePizza.values())
 				.forEach(System.out::println); /* Lister les enum cree */
 
-		String catPizza = ihmUtil.getScanner().next();
+		String catPizza = scanner.next();
 
 		System.out.println("Veuillez entrer le prix de la nouvelle pizza s'il vous plait");
-		Double prix = ihmUtil.getScanner().nextDouble();
+		Double prix = scanner.nextDouble();
 
-		ihmUtil.getPizzaDao().save(new Pizza(code, nom, CategoriePizza.valueOf(catPizza), prix));
+		pizzaDao.save(new Pizza(code, nom, CategoriePizza.valueOf(catPizza), prix));
 
 	}
 

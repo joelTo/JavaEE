@@ -2,6 +2,7 @@ package fr.ihm;
 
 import java.sql.SQLException;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 import javax.annotation.PostConstruct;
@@ -27,7 +28,7 @@ public class MainMenu {
 	private Map<Integer, Action> map = new TreeMap<Integer, Action>();
 
 	@Autowired
-	private IhmUtil ihmUtil;
+	private Scanner scanner;
 	@Autowired
 	private ApplicationContext context;
 
@@ -50,7 +51,7 @@ public class MainMenu {
 
 	public void parseAndExec() throws NumberFormatException, SavePizzaException, DeletePizzaException,
 			UpdatesPizzaException, SQLException {
-		String input = ihmUtil.getScanner().next();
+		String input = scanner.next();
 		this.map.get(Integer.parseInt(input)).doAction();
 
 	}

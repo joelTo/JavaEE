@@ -8,12 +8,12 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import fr.ihm.IhmUtil;
+import fr.dao.PizzaDaoFactory;
 
 @Component
 public class ListPizza extends Action {
 	@Autowired
-	private IhmUtil ihmUtil;
+	private PizzaDaoFactory pizzaDao;
 
 	@PostConstruct
 	public void init() {
@@ -26,7 +26,7 @@ public class ListPizza extends Action {
 		System.out.println("LISTE DES PIZZAS ");
 		System.out.println("*****************");
 
-		Stream.of(this.ihmUtil.getPizzaDao().findAll()).forEach(System.out::println);
+		Stream.of(this.pizzaDao.findAll()).forEach(System.out::println);
 		System.out.println(
 				"*******************************************************************************************************");
 	}

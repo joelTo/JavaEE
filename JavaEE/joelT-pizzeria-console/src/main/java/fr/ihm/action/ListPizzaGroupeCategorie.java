@@ -10,14 +10,14 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import fr.ihm.IhmUtil;
+import fr.dao.PizzaDaoFactory;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
 @Component
 public class ListPizzaGroupeCategorie extends Action {
 	@Autowired
-	private IhmUtil ihmUtil;
+	private PizzaDaoFactory pizzaDao;
 
 	@PostConstruct
 	public void init() {
@@ -27,7 +27,7 @@ public class ListPizzaGroupeCategorie extends Action {
 	@Override
 	public void doAction() throws SQLException {
 		System.out.println("Affichage des pizzas par categories");
-		Map<CategoriePizza, List<Pizza>> map = this.ihmUtil.getPizzaDao().findAll().stream()
+		Map<CategoriePizza, List<Pizza>> map = this.pizzaDao.findAll().stream()
 				.collect(Collectors.groupingBy(pizza -> pizza.getCatPizza()));
 		map.entrySet().stream().forEach(System.out::println);
 	}
