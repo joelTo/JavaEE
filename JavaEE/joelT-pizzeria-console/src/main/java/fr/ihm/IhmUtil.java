@@ -2,8 +2,11 @@ package fr.ihm;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
 import fr.dao.PizzaDaoFactory;
 
+@Component
 public class IhmUtil {
 
 	private Scanner scanner;

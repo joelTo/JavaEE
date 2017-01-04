@@ -2,7 +2,7 @@ package fr.console;
 
 import java.sql.SQLException;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
@@ -22,8 +22,8 @@ public class PizzeriaAdminConsoleApp {
 		 */
 		//
 		//
-		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("dao-jdbc-config.xml",
-				"application-config.xml")) {
+		try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+				PizzeriaAppSpringConfig.class)) {
 			IhmUtil ihmUtil = context.getBean(IhmUtil.class);
 			MainMenu core = new MainMenu(ihmUtil);
 
