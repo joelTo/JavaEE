@@ -34,7 +34,7 @@
 	       format: "json"
 	     })
 	     .done(function( data ) {
-	    	 data.forEach(function(elem){
+	    	 data.forEach(function(i, elem){
 	    		 $('#tbody_data').html('<p> Nom: ' + elem.id + '</p>');
 	             $('#tbody_data').append('<p>Prenom : ' + elem.lastname+ '</p>');
 	             $('#tbody_data').append('<p>email : ' + elem.email+ '</p>');
