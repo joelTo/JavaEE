@@ -30,8 +30,8 @@ public class PizzaDao {
 	}
 
 	public void create(Pizza p) {
-		String sql = "INSERT INTO PIZZA (reference,libelle,prix,catPizza,url) VALUES(?,?,?,?,?)";
-		this.jdbcTemplate.update(sql, p.getCode(), p.getNom(), p.getPrix(), p.getCatPizza().name(), "null");
+		String sql = "INSERT INTO PIZZA (id,reference,libelle,prix,catPizza,url) VALUES(?,?,?,?,?,?)";
+		this.jdbcTemplate.update(sql, p.getId(), p.getCode(), p.getNom(), p.getPrix(), p.getCatPizza().name(), "null");
 	}
 
 	public void update(Pizza p, String oldCode) {
