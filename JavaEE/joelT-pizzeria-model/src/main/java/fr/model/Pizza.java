@@ -57,6 +57,14 @@ public class Pizza {
 		this.catPizza = catPizza;
 	}
 
+	public Pizza(String code, String nom, CategoriePizza catPizza, double prix, String url) {
+		this.code = code;
+		this.nom = nom;
+		this.prix = prix;
+		this.catPizza = catPizza;
+		this.url = url;
+	}
+
 	public Pizza(int id, String code, String nom, CategoriePizza catPizza, double prix) {
 		super();
 		this.id = id;
@@ -64,6 +72,17 @@ public class Pizza {
 		this.nom = nom;
 		this.prix = prix;
 		this.catPizza = catPizza;
+		// nbPizzas++;
+	}
+
+	public Pizza(int id, String code, String nom, CategoriePizza catPizza, double prix, String url) {
+		super();
+		this.id = id;
+		this.code = code;
+		this.nom = nom;
+		this.prix = prix;
+		this.catPizza = catPizza;
+		this.url = url;
 		// nbPizzas++;
 	}
 

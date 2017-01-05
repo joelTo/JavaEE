@@ -29,6 +29,16 @@ public class PizzaDao {
 		return this.jdbcTemplate.query(sql, new PizzaMapper());
 	}
 
+	public void create(Pizza p) {
+		String sql = "INSERT INTO PIZZA (reference,libelle,prix,catPizza,url) VALUES(?,?,?,?,?)";
+		this.jdbcTemplate.update(sql, p.getCode(), p.getNom(), p.getPrix(), p.getCatPizza().name(), "null");
+	}
+
+	public void update(Pizza p) {
+		String sql = "UPDATE PIZZA SET PIZZA_NAME = ? WHERE ID = ? ";
+		this.jdbcTemplate.update(sql, p.getNom(), p.getId());
+	}
+
 	public Integer countPizzas() {
 		String sql = "SELECT COUNT(*) FROM PIZZA";
 		return this.jdbcTemplate.queryForObject(sql, Integer.class);

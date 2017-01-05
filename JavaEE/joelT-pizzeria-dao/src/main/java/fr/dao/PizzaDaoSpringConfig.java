@@ -10,6 +10,11 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 @ComponentScan("fr.dao")
 public class PizzaDaoSpringConfig {
+	/*
+	 * @Bean public DataSource datasource() { EmbeddedDatabaseBuilder builder =
+	 * new EmbeddedDatabaseBuilder(); return
+	 * builder.setType(EmbeddedDatabaseType.H2).build(); }
+	 */
 
 	@Bean
 	public DataSource datasource() {
@@ -20,4 +25,5 @@ public class PizzaDaoSpringConfig {
 		dataSource.setPassword("");
 		return dataSource;
 	}
+
 }

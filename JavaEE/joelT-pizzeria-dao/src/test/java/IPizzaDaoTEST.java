@@ -23,4 +23,15 @@ public class IPizzaDaoTEST {
 		// fail("Not yet implemented");
 	}
 
+	@Test
+	public void testcreate() {
+		pizzaDao.create(new Pizza("MAT", "MATTIEU", CategoriePizza.VIANDE, 10));
+		Assert.assertEquals((pizzaDao.findAllPizza().get(1)), new Pizza("MAT", "MATTIEU", CategoriePizza.VIANDE, 10));
+	}
+
+	@Test
+	public void testupdate() {
+
+	}
+
 }
