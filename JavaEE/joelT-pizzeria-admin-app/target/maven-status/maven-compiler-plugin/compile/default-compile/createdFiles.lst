@@ -1,9 +1,15 @@
-fr\pizzeria\admin\web\DeletePizzaController.class
 fr\pizzeria\admin\metier\PizzaService.class
 fr\pizzeria\admin\web\SignOutAdminController.class
 fr\pizzeria\admin\web\EditPizzaController.class
-fr\pizzeria\admin\web\PizzaServletWebApi.class
+fr\pizzeria\admin\metier\ClientServiceEJB.class
+fr\pizzeria\admin\metier\rest\ApplicationConfig.class
+fr\pizzeria\admin\web\ClientController.class
 fr\pizzeria\admin\web\AddPizzaController.class
 fr\pizzeria\admin\web\AuthAdminController.class
 fr\pizzeria\admin\web\ListerPizzaController.class
+fr\pizzeria\admin\metier\rest\ClientRessources.class
 fr\pizzeria\admin\web\ProtectFilter.class
+fr\pizzeria\admin\web\DeletePizzaController.class
+fr\pizzeria\admin\metier\PizzaServiceEJB.class
+fr\pizzeria\admin\web\PizzaServletWebApi.class
+fr\pizzeria\admin\metier\rest\PizzaRessources.class

@@ -80,6 +80,17 @@
 </servlet-mapping>
 
 
+ <servlet>
+    <servlet-name>ClientController</servlet-name>
+    <servlet-class>fr.pizzeria.admin.web.ClientController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>ClientController</servlet-name>
+	<url-pattern>/api/client</url-pattern>
+</servlet-mapping>
+
+
 
 </web-app>
 

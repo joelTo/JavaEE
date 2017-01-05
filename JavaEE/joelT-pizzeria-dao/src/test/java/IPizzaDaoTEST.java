@@ -18,8 +18,8 @@ public class IPizzaDaoTEST {
 
 	@Test
 	public void test() {
-		pizzaDao.save(new Pizza(0, "PEP", "PEPERONI", CategoriePizza.valueOf("VIANDE"), 11));
-		Assert.assertEquals((pizzaDao.findAll().stream().filter(x -> "PEP".equals(x.getCode())).findAny().get()),
+		pizzaDao.create(new Pizza(0, "PEP", "PEPERONI", CategoriePizza.valueOf("VIANDE"), 11));
+		Assert.assertEquals((pizzaDao.findAllPizza().stream().filter(x -> "PEP".equals(x.getCode())).findAny().get()),
 				new Pizza(0, "PEP", "PEPERONI", CategoriePizza.valueOf("VIANDE"), 11));
 
 	}
