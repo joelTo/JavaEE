@@ -14,7 +14,7 @@ import fr.exception.SavePizzaException;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
-@Component
+@Component // On peut utiliser aussi @Controller qui est un fils de @Component
 public class AddPizza extends Action {
 	@Autowired
 	private Scanner scanner;

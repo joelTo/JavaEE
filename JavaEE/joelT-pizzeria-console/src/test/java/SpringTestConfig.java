@@ -1,5 +1,3 @@
-package fr.console;
-
 import java.util.Scanner;
 
 import org.springframework.context.annotation.Bean;
@@ -10,10 +8,8 @@ import fr.dao.PizzaDaoFactory;
 import fr.dao.PizzaDaoTableau;
 
 @Configuration
-@ComponentScan("fr.ihm") // Si plusieurs package à charger -->
-							// ({package1,package2,...})
-public class PizzeriaAppSpringConfig {
-
+@ComponentScan("fr.ihm.action")
+public class SpringTestConfig {
 	@Bean
 	public PizzaDaoFactory pizzaDao() {
 		PizzaDaoFactory test = new PizzaDaoTableau();
@@ -26,5 +22,4 @@ public class PizzeriaAppSpringConfig {
 								// pouvons pas modifier
 		return new Scanner(System.in);
 	}
-
 }

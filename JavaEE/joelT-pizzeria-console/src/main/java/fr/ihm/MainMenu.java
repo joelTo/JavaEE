@@ -34,7 +34,7 @@ public class MainMenu {
 
 	@PostConstruct
 	public void init() {
-
+		// A faire (bonus) Controller a partir du .properties le menu entier.
 		map.put(1, context.getBean(ListPizza.class));
 		map.put(2, context.getBean(AddPizza.class));
 		map.put(3, context.getBean(UpdatePizza.class));

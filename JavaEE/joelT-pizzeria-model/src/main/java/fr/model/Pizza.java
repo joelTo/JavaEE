@@ -67,7 +67,8 @@ public class Pizza {
 		// nbPizzas++;
 	}
 
-	public boolean equals(Pizza obj) {
+	@Override
+	public boolean equals(Object obj) {
 		if (obj == null) {
 			return false;
 		}
