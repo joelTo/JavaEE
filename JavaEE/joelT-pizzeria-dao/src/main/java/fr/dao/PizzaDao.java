@@ -34,9 +34,10 @@ public class PizzaDao {
 		this.jdbcTemplate.update(sql, p.getCode(), p.getNom(), p.getPrix(), p.getCatPizza().name(), "null");
 	}
 
-	public void update(Pizza p) {
-		String sql = "UPDATE PIZZA SET PIZZA_NAME = ? WHERE ID = ? ";
-		this.jdbcTemplate.update(sql, p.getNom(), p.getId());
+	public void update(Pizza p, String oldCode) {
+		String sql = "UPDATE PIZZA SET reference = ? ,libelle= ? , prix= ?  WHERE reference = ? ";
+		this.jdbcTemplate.update(sql, p.getCode(), p.getNom(), p.getPrix(), oldCode);
+
 	}
 
 	public Integer countPizzas() {

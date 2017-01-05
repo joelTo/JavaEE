@@ -31,7 +31,8 @@ public class IPizzaDaoTEST {
 
 	@Test
 	public void testupdate() {
-
+		pizzaDao.update(new Pizza("MET", "MATTIE2", CategoriePizza.VIANDE, 14), "MAT");
+		Assert.assertEquals((pizzaDao.findAllPizza().get(1)), new Pizza("MET", "MATTIE2", CategoriePizza.VIANDE, 14));
 	}
 
 }
