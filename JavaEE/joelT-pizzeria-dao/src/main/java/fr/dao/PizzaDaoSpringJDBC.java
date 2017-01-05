@@ -11,16 +11,17 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import fr.exception.DeletePizzaException;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
 @Repository
-public class PizzaDao {
+public class PizzaDaoSpringJDBC {
 
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
-	public PizzaDao(DataSource datasource) {
+	public PizzaDaoSpringJDBC(DataSource datasource) {
 		this.jdbcTemplate = new JdbcTemplate(datasource);
 	}
 
@@ -56,5 +57,10 @@ public class PizzaDao {
 			p.setUrl((rs.getString("url")));
 			return p;
 		}
+	}
+
+	public void delete(String pizzaToDelete) throws DeletePizzaException {
+		String sql = "DELETE FROM `PIZZA` WHERE `PIZZA`.`reference` = ?";
+		this.jdbcTemplate.update(sql, pizzaToDelete);
 	}
 }
