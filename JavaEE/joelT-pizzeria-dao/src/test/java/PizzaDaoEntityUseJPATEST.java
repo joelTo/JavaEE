@@ -18,16 +18,9 @@ public class PizzaDaoEntityUseJPATEST {
 
 	@Test
 	public void test() {
+		pizzaDao.save(new Pizza("PEP", "PEPERONI", CategoriePizza.valueOf("VIANDE"), 11, "test_url"));
 		Assert.assertEquals((pizzaDao.findAllPizza().stream().filter(x -> "PEP".equals(x.getCode())).findAny().get()),
-				new Pizza(1, "PEP", "PEPERONI", CategoriePizza.valueOf("VIANDE"), 11.2));
-	}
-
-	@Test
-	public void testcreate() {
-		pizzaDao.save((new Pizza("MAT", "MATTIEU", CategoriePizza.VIANDE, 10, "test_url")));
-
-		Assert.assertEquals(pizzaDao.findAllPizza().stream().filter(x -> "MAT".equals(x.getCode())).findAny().get(),
-				new Pizza("MAT", "MATTIEU", CategoriePizza.VIANDE, 10, "test_url"));
+				new Pizza(1, "PEP", "PEPERONI", CategoriePizza.valueOf("VIANDE"), 11.2, "test_url"));
 	}
 
 }
