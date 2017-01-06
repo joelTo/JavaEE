@@ -9,7 +9,7 @@ import fr.exception.UpdatesPizzaException;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
-public class PizzaDaoTableau implements PizzaDaoFactory {
+public class PizzaDaoTableau implements IPizzaDaoFactory {
 
 	private ArrayList<Pizza> pizzas = new ArrayList<Pizza>() {
 		{

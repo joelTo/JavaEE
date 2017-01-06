@@ -8,7 +8,7 @@ import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
 import fr.model.Pizza;
 
-public interface PizzaDaoFactory {
+public interface IPizzaDaoFactory {
 
 	List<Pizza> findAll() throws SQLException;
 

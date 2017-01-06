@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import fr.dao.PizzaDaoFactory;
+import fr.dao.IPizzaDaoFactory;
 import fr.dao.PizzaDaoTableau;
 
 @Configuration
@@ -15,8 +15,8 @@ import fr.dao.PizzaDaoTableau;
 public class PizzeriaAppSpringConfig {
 
 	@Bean
-	public PizzaDaoFactory pizzaDao() {
-		PizzaDaoFactory test = new PizzaDaoTableau();
+	public IPizzaDaoFactory pizzaDao() {
+		IPizzaDaoFactory test = new PizzaDaoTableau();
 		return test;
 	}
 

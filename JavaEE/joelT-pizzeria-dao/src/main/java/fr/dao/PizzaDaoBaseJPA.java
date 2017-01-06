@@ -15,7 +15,7 @@ import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
 import fr.model.Pizza;
 
-public class PizzaDaoBaseJPA implements PizzaDaoFactory {
+public class PizzaDaoBaseJPA implements IPizzaDaoFactory {
 	private EntityManagerFactory emf;
 	@PersistenceUnit(unitName = "joelT-pizzeria-console")
 	private EntityManager em;

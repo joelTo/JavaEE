@@ -20,7 +20,7 @@ import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
 import fr.model.Pizza;
 
-public class PizzaDaoREST implements PizzaDaoFactory {
+public class PizzaDaoREST implements IPizzaDaoFactory {
 
 	@Override
 	public List<Pizza> findAll() throws SQLException {

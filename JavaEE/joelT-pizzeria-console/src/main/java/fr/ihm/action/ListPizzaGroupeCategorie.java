@@ -10,14 +10,14 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import fr.dao.PizzaDaoFactory;
+import fr.dao.IPizzaDaoFactory;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
 
 @Component
 public class ListPizzaGroupeCategorie extends Action {
 	@Autowired
-	private PizzaDaoFactory pizzaDao;
+	private IPizzaDaoFactory pizzaDao;
 
 	@PostConstruct
 	public void init() {

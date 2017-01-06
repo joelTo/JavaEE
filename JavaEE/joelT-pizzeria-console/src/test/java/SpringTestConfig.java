@@ -4,15 +4,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import fr.dao.PizzaDaoFactory;
+import fr.dao.IPizzaDaoFactory;
 import fr.dao.PizzaDaoTableau;
 
 @Configuration
 @ComponentScan("fr.ihm.action")
 public class SpringTestConfig {
 	@Bean
-	public PizzaDaoFactory pizzaDao() {
-		PizzaDaoFactory test = new PizzaDaoTableau();
+	public IPizzaDaoFactory pizzaDao() {
+		IPizzaDaoFactory test = new PizzaDaoTableau();
 		return test;
 	}
 

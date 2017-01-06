@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import fr.dao.PizzaDaoFactory;
+import fr.dao.IPizzaDaoFactory;
 import fr.exception.SavePizzaException;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
@@ -19,7 +19,7 @@ public class AddPizza extends Action {
 	@Autowired
 	private Scanner scanner;
 	@Autowired
-	private PizzaDaoFactory pizzaDao;
+	private IPizzaDaoFactory pizzaDao;
 
 	@PostConstruct
 	public void init() {

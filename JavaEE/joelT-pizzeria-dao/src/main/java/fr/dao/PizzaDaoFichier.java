@@ -14,7 +14,7 @@ import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
 import fr.model.Pizza;
 
-public class PizzaDaoFichier implements PizzaDaoFactory {
+public class PizzaDaoFichier implements IPizzaDaoFactory {
 	private File file = new File("PizzaFiles");
 
 	@Override

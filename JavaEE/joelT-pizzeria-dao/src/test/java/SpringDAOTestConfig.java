@@ -12,14 +12,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class SpringDAOTestConfig {
 
 	@Bean
-	public LocalEntityManagerFactoryBean EntityManager() {
+	public LocalEntityManagerFactoryBean entityManagerFactory() {
 		LocalEntityManagerFactoryBean entity = new LocalEntityManagerFactoryBean();
 		entity.setPersistenceUnitName("joelT-pizzeria-console");
 		return entity;
 	}
 
 	@Bean
-	public PlatformTransactionManager txManager() {
+	public PlatformTransactionManager transactionManager() {
 		return new JpaTransactionManager();
 	}
 

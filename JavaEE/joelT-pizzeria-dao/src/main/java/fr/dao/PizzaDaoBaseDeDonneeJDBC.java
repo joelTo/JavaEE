@@ -14,7 +14,7 @@ import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
 import fr.model.Pizza;
 
-public class PizzaDaoBaseDeDonneeJDBC implements PizzaDaoFactory {
+public class PizzaDaoBaseDeDonneeJDBC implements IPizzaDaoFactory {
 	private String url;
 	private String user;
 	private String password;
