@@ -14,7 +14,7 @@ import fr.model.Pizza;
 
 @Repository
 @EnableJpaRepositories("fr.dao")
-public class IPizzaDaoIPizzaRepository implements IPizzaDaoFactory {
+public class PizzaDaoPizzaRepositoryJPA implements IPizzaDaoFactory {
 
 	@Autowired
 	private IPizzaRepository toto;

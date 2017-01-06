@@ -18,7 +18,7 @@ public class PizzaDaoEntityUseJPA {
 	@PersistenceContext
 	private EntityManager em;
 
-	public List<Pizza> findAllPizza() {
+	public List<Pizza> findAll() {
 		TypedQuery<Pizza> empizza = em.createQuery("SELECT p FROM Pizza p", Pizza.class);
 		return empizza.getResultList();
 	}

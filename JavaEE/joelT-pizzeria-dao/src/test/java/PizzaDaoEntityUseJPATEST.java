@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import fr.dao.IPizzaDaoIPizzaRepository;
+import fr.dao.PizzaDaoPizzaRepositoryJPA;
 import fr.exception.SavePizzaException;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;
@@ -17,7 +17,7 @@ import fr.model.Pizza;
 @ContextConfiguration(classes = SpringDAOTestConfig.class)
 public class PizzaDaoEntityUseJPATEST {
 	@Inject
-	private IPizzaDaoIPizzaRepository pizzaDao;
+	private PizzaDaoPizzaRepositoryJPA pizzaDao;
 
 	@Test
 	public void test() {

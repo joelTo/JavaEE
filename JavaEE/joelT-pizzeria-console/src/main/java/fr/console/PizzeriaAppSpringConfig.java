@@ -10,7 +10,8 @@ import fr.dao.IPizzaDaoFactory;
 import fr.dao.PizzaDaoTableau;
 
 @Configuration
-@ComponentScan({ "fr.ihm", "fr.dao" }) // Si plusieurs package à charger -->
+@ComponentScan({ "fr.ihm", "fr.dao" }) // Si plusieurs package
+// à charger -->
 // ({package1,package2,...})
 public class PizzeriaAppSpringConfig {
 
