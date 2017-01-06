@@ -22,4 +22,5 @@ public class SpringDAOTestConfig {
 	public PlatformTransactionManager txManager() {
 		return new JpaTransactionManager();
 	}
+
 }

@@ -15,7 +15,9 @@ public class PizzaDaoSpringConfig {
 	@Bean
 	public DataSource datasource() {
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-		return builder.setType(EmbeddedDatabaseType.H2).addScript("pizzeria.sql").build();
+		return builder.setType(EmbeddedDatabaseType.H2)
+				// .addScript("pizzeria.sql")
+				.build();
 	}
 
 }
