@@ -22,4 +22,12 @@ public class PizzaDaoEntityUseJPATEST {
 				new Pizza(1, "PEP", "PEPERONI", CategoriePizza.valueOf("VIANDE"), 11.2));
 	}
 
+	@Test
+	public void testcreate() {
+		pizzaDao.save((new Pizza("MAT", "MATTIEU", CategoriePizza.VIANDE, 10, "test_url")));
+
+		Assert.assertEquals(pizzaDao.findAllPizza().stream().filter(x -> "MAT".equals(x.getCode())).findAny().get(),
+				new Pizza("MAT", "MATTIEU", CategoriePizza.VIANDE, 10, "test_url"));
+	}
+
 }
