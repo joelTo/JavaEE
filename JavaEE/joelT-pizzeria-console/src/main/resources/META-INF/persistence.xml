@@ -9,6 +9,7 @@
 		<class>fr.model.Client</class>
 		<class>fr.model.Commande</class>
 		<class>fr.model.Livreur</class>
+		<class>fr.model.Performance</class>
 
 		<properties>
 		<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:testdb"/>

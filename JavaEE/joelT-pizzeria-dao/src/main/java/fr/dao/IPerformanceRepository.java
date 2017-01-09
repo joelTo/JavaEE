@@ -1,4 +1,4 @@
-package fr.dao.Performance;
+package fr.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

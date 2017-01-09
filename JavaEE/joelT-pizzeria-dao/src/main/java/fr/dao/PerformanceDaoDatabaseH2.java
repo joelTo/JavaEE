@@ -1,15 +1,13 @@
-package fr.dao.Performance;
+package fr.dao;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 import fr.model.Performance;
 
 @Repository
-@EnableJpaRepositories("fr.dao")
 public class PerformanceDaoDatabaseH2 implements IPerformanceDaoFactory {
 
 	@Autowired
