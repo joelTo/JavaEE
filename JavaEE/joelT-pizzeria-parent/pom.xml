@@ -15,6 +15,7 @@
 		<module>../joelT-pizzeria-model</module>
 		<module>../joelT-pizzeria-console-client</module>
 		<module>../joelT-pizzeria-admin-app</module>
+		<module>../joelT-pizzeria-stock-app</module>
 	</modules>
 
 	<properties>

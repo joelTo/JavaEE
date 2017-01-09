@@ -1,4 +1,4 @@
-package fr.exception.Aspect;
+package fr.exception.aspect;
 
 public class AlongException extends Exception {
 

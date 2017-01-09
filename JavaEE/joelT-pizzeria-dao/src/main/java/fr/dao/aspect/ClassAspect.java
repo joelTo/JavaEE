@@ -52,11 +52,6 @@ public class ClassAspect {
 		Object valeurRetournee = null;
 		try {
 			valeurRetournee = process.proceed();
-
-			System.out.println(fullDateFormat.format(new Date()) + " " + " duree : "
-					+ (Calendar.getInstance().getTimeInMillis() - timeStart) + " ms");
-			System.out.println();
-
 			Performance perf = new Performance(process.getSignature().toString(), fullDateFormat.format(new Date()),
 					(Calendar.getInstance().getTimeInMillis() - timeStart));
 			database.save(perf);
