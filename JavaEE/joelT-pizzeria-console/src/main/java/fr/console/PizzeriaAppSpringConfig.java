@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import fr.dao.IPizzaDaoFactory;
-import fr.dao.PizzaDaoTableau;
+import fr.dao.PizzaDaoPizzaRepositoryJPA;
 
 @Configuration
 @ComponentScan({ "fr.ihm", "fr.dao" }) // Si plusieurs package
@@ -17,7 +17,7 @@ public class PizzeriaAppSpringConfig {
 
 	@Bean
 	public IPizzaDaoFactory pizzaDao() {
-		IPizzaDaoFactory test = new PizzaDaoTableau();
+		IPizzaDaoFactory test = new PizzaDaoPizzaRepositoryJPA();
 		return test;
 	}
 
