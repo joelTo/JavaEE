@@ -18,4 +18,36 @@ public class Performance {
 	@Column(name = "temps", length = 50, nullable = false)
 	private Double tempsExecution;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getService() {
+		return service;
+	}
+
+	public void setService(String service) {
+		this.service = service;
+	}
+
+	public DateFormat getDate() {
+		return date;
+	}
+
+	public void setDate(DateFormat date) {
+		this.date = date;
+	}
+
+	public Double getTempsExecution() {
+		return tempsExecution;
+	}
+
+	public void setTempsExecution(Double tempsExecution) {
+		this.tempsExecution = tempsExecution;
+	}
+
 }

@@ -1,7 +1,9 @@
 package fr.dao.aspect;
 
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -39,20 +41,20 @@ public class ClassAspect {
 
 	@Around("execution(* fr.dao.*.*(..))")
 	public Object inExecution(ProceedingJoinPoint process) {
+		DateFormat fullDateFormat = DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.FULL);
+		Long timeStart = Calendar.getInstance().getTimeInMillis();
+
 		Object valeurRetournee = null;
 		try {
-			long start = System.currentTimeMillis();
+
 			valeurRetournee = process.proceed();
-			long end = System.currentTimeMillis();
-			long duree = end - start;
-			Calendar dateHeureCourante = Calendar.getInstance();
-			System.out.println(dateHeureCourante + " " + " duree : " + duree + " ms");
-			System.out.println(process.getClass().getName());
+			System.out.println(fullDateFormat.format(new Date()) + " " + " duree : "
+					+ (Calendar.getInstance().getTimeInMillis() - timeStart) + " ms");
+			System.out.println(process.getSignature().toString());
 
 		} catch (Throwable e) {
 			Logger.getGlobal().log(Level.SEVERE, "", e);
 		}
 		return valeurRetournee;
 	}
-
 }
