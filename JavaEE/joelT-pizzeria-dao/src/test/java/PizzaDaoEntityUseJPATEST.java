@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import fr.dao.PizzaDaoPizzaRepositoryJPA;
+import fr.dao.springjpa.PizzaDaoPizzaRepositoryJPA;
 import fr.exception.SavePizzaException;
 import fr.model.CategoriePizza;
 import fr.model.Pizza;

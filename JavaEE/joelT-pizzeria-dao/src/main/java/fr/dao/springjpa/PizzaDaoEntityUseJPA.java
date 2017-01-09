@@ -1,4 +1,4 @@
-package fr.dao;
+package fr.dao.springjpa;
 
 import java.util.List;
 

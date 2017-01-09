@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.dao.PizzaDaoBaseJPA;
+import fr.dao.basique.PizzaDaoBaseJPA;
 import fr.model.Pizza;
 
 public class PizzaServletWebApi extends HttpServlet {

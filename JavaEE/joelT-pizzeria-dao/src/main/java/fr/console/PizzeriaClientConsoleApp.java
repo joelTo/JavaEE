@@ -1,7 +1,7 @@
 package fr.console;
 
-import fr.dao.ClientDaoConsoleJPA;
-import fr.dao.ClientDaoFactory;
+import fr.dao.client.ClientDaoConsoleJPA;
+import fr.dao.client.ClientDaoFactory;
 import fr.model.Client;
 
 public class PizzeriaClientConsoleApp {

@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import fr.dao.IPizzaDaoFactory;
-import fr.dao.PizzaDaoTableau;
+import fr.dao.basique.PizzaDaoTableau;
 
 @Configuration
 @ComponentScan("fr.ihm.action")

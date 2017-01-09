@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.dao.PizzaDaoBaseJPA;
+import fr.dao.basique.PizzaDaoBaseJPA;
 import fr.exception.DeletePizzaException;
 
 public class DeletePizzaController extends HttpServlet {

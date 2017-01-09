@@ -1,4 +1,4 @@
-package fr.dao;
+package fr.dao.Performance;
 
 import java.util.List;
 

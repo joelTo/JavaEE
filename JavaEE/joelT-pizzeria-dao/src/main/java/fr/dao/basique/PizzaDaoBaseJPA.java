@@ -1,4 +1,4 @@
-package fr.dao;
+package fr.dao.basique;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
 
+import fr.dao.IPizzaDaoFactory;
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;

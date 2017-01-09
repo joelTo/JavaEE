@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import fr.dao.IPizzaDaoFactory;
-import fr.dao.PizzaDaoPizzaRepositoryJPA;
+import fr.dao.springjpa.PizzaDaoPizzaRepositoryJPA;
 
 @Configuration
 @ComponentScan({ "fr.ihm", "fr.dao" }) // Si plusieurs package

@@ -1,4 +1,4 @@
-package fr.dao;
+package fr.dao.basique;
 
 import java.io.File;
 import java.io.FileWriter;

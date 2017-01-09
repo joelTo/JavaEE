@@ -42,8 +42,10 @@ public class AddPizza extends Action {
 
 		System.out.println("Veuillez entrer le prix de la nouvelle pizza s'il vous plait");
 		Double prix = scanner.nextDouble();
+		System.out.println("Veuillez entrer l'url de la nouvelle pizza s'il vous plait");
+		String url = scanner.next();
 
-		pizzaDao.save(new Pizza(code, nom, CategoriePizza.valueOf(catPizza), prix));
+		pizzaDao.save(new Pizza(code, nom, CategoriePizza.valueOf(catPizza), prix, url));
 
 	}
 

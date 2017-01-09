@@ -1,4 +1,4 @@
-package fr.dao;
+package fr.dao.springjpa;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

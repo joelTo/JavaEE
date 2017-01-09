@@ -1,4 +1,4 @@
-package fr.dao;
+package fr.dao.springjpa;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
+import fr.dao.IPizzaDaoFactory;
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;

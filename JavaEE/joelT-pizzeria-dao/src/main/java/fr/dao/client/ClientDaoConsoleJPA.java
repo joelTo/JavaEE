@@ -1,4 +1,4 @@
-package fr.dao;
+package fr.dao.client;
 
 import java.util.List;
 

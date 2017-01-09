@@ -1,4 +1,4 @@
-package fr.dao;
+package fr.dao.basique;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
+import fr.dao.IPizzaDaoFactory;
 import fr.exception.DeletePizzaException;
 import fr.exception.PizzaException;
 import fr.exception.SavePizzaException;

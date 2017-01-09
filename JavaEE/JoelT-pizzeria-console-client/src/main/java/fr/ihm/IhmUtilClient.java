@@ -2,7 +2,7 @@ package fr.ihm;
 
 import java.util.Scanner;
 
-import fr.dao.ClientDaoFactory;
+import fr.dao.client.ClientDaoFactory;
 
 
 public class IhmUtilClient {
