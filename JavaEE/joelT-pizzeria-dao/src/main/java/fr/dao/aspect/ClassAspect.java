@@ -12,13 +12,18 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import fr.dao.Performance.PerformanceDaoDatabaseH2;
+import fr.model.Performance;
 import fr.model.Pizza;
 
 @Component
 @Aspect
 public class ClassAspect {
+	@Autowired
+	private PerformanceDaoDatabaseH2 database;
 
 	@Before("execution(* fr.dao.*.save(..))")
 	public void BeforeSavePizza(JoinPoint joinPoint) {
@@ -47,10 +52,14 @@ public class ClassAspect {
 		Object valeurRetournee = null;
 		try {
 			valeurRetournee = process.proceed();
+
 			System.out.println(fullDateFormat.format(new Date()) + " " + " duree : "
 					+ (Calendar.getInstance().getTimeInMillis() - timeStart) + " ms");
-			System.out.println(process.getSignature().toString());
+			System.out.println();
 
+			Performance perf = new Performance(process.getSignature().toString(), fullDateFormat.format(new Date()),
+					(Calendar.getInstance().getTimeInMillis() - timeStart));
+			database.save(perf);
 		} catch (Throwable e) {
 			Logger.getGlobal().log(Level.SEVERE, "", e);
 		}

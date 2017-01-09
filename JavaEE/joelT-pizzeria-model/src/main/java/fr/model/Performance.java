@@ -1,7 +1,5 @@
 package fr.model;
 
-import java.text.DateFormat;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,9 +14,20 @@ public class Performance {
 	@Column(name = "service", length = 50, nullable = false, unique = true)
 	private String service;
 	@Column(name = "date", length = 100, nullable = false)
-	private DateFormat date;
+	private String date;
 	@Column(name = "temps", length = 50, nullable = false)
-	private Double tempsExecution;
+	private Long tempsExecution;
+
+	public Performance() {
+		super();
+	}
+
+	public Performance(String service, String date, Long tempsExecution) {
+		super();
+		this.service = service;
+		this.date = date;
+		this.tempsExecution = tempsExecution;
+	}
 
 	public Integer getId() {
 		return id;
@@ -36,20 +45,25 @@ public class Performance {
 		this.service = service;
 	}
 
-	public DateFormat getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(DateFormat date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public Double getTempsExecution() {
+	public Long getTempsExecution() {
 		return tempsExecution;
 	}
 
-	public void setTempsExecution(Double tempsExecution) {
+	public void setTempsExecution(Long tempsExecution) {
 		this.tempsExecution = tempsExecution;
 	}
 
+	@Override
+	public String toString() {
+		return "Performance [id=" + id + ", service=" + service + ", date=" + date + ", temps d'execution="
+				+ tempsExecution + " ms" + "]\n";
+	}
 }

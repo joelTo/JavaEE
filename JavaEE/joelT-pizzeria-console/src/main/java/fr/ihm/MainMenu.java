@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import fr.dao.Performance.PerformanceDaoDatabaseH2;
 import fr.exception.DeletePizzaException;
 import fr.exception.SavePizzaException;
 import fr.exception.UpdatesPizzaException;
@@ -32,6 +33,9 @@ public class MainMenu {
 	@Autowired
 	private ApplicationContext context;
 
+	@Autowired
+	private PerformanceDaoDatabaseH2 database;
+
 	@PostConstruct
 	public void init() {
 		// A faire (bonus) Controller a partir du .properties le menu entier.
@@ -47,6 +51,7 @@ public class MainMenu {
 
 	public void displayMenu() {
 		map.forEach((i, a) -> System.out.println(i + " " + a.getDescription()));
+		database.findAll().forEach(System.out::println);
 	}
 
 	public void parseAndExec() throws NumberFormatException, SavePizzaException, DeletePizzaException,
