@@ -18,9 +18,12 @@ public class TestController {
 
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public ModelAndView printWelcome() {
+		Ingredient ingredient = new Ingredient("nom", 10.00, 1500000L);
+		ingredientDao.save(ingredient);
+		ingredientDao.save(ingredient);
 		ModelAndView mav = new ModelAndView();
 		List<Ingredient> listIngre = ingredientDao.findAll();
-		mav.addObject("ingredient", listIngre);
+		mav.addObject("listIngredient", listIngre);
 		mav.setViewName("hello");
 		return mav;
 	}
