@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import fr.model.Ingredient;
 
 @Repository
-public class IngredientDaoDatabase implements IIngredientDaoFactory {
+public class IngredientResource implements IIngredientDaoFactory {
 	@Autowired
 	private IIngredientRepository database;
 

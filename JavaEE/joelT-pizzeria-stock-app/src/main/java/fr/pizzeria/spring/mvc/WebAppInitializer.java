@@ -28,7 +28,20 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
 		dispatcher.addMapping("/api/*");
 
-		servletContext.addListener(new ContextLoaderListener(webContext));
+		servletContext.addListener(new ContextLoaderListener(webContext));// on
+																			// ajout
+																			// un
+																			// ecouteur
+																			// pour
+																			// que
+																			// Spring
+																			// puisse
+																			// gérer
+																			// la
+																			// vie
+																			// de
+																			// nos
+																			// vue
 	}
 
 }
